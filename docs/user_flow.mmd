@@ -1,0 +1,42 @@
+flowchart TD
+    Start([用戶打開應用]) --> Login{登錄/註冊}
+    Login -->|新用戶| Register[註冊頁面]
+    Login -->|已有帳號| LoginPage[登錄頁面]
+    Register --> RegisterForm[填寫註冊信息<br/>郵箱/用戶名<br/>密碼]
+    LoginPage --> LoginForm[輸入登錄信息]
+    RegisterForm --> AuthSuccess[認證成功]
+    LoginForm --> AuthSuccess
+    
+    AuthSuccess --> Homepage[首頁<br/>Homepage]
+    
+    Homepage --> CompList[比賽信息<br/>Competition Listing]
+    Homepage --> Showcase[展示中心<br/>Showcase Hub]
+    Homepage --> Profile[個人資料<br/>Profile]
+    Homepage --> Journal[日誌/通知<br/>Journal]
+    Homepage --> Help[幫助與資源<br/>Help & Resources]
+    
+    CompList --> CompDetails[比賽詳情<br/>Competition Details]
+    CompList --> JudgingPanel[評審團信息<br/>Judging Panel]
+    CompList --> Submission[提交作品<br/>Submission Portal]
+    
+    Showcase --> Portfolio[作品展示<br/>Portfolio]
+    Showcase --> CuratedContent[精選內容<br/>Curated Content]
+    Showcase --> FriendsRec[朋友推薦<br/>Friends' Recommendation]
+    
+    Profile --> FriendsHub[好友中心<br/>Friends' Hub]
+    Profile --> Messages[消息中心<br/>Messages]
+    Profile --> GrowthStats[個人成長數據<br/>Personal Growth/<br/>Engagement Stats]
+    
+    Journal --> Press[媒體報導<br/>Press]
+    Journal --> Interviews[訪談內容<br/>Interviews]
+    Journal --> SocialMedia[社交媒體<br/>Social Media]
+    
+    Help --> Bio[關於我們<br/>Bio]
+    Help --> Library[資源庫<br/>Library]
+    Help --> HelpNotif[幫助通知<br/>Notification & Updates]
+    
+    style Start fill:#e1f5ff
+    style Homepage fill:#fff4e1
+    style AuthSuccess fill:#d4edda
+    style Login fill:#ffe1e1
+
